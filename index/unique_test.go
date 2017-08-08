@@ -6,9 +6,9 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/asdine/storm"
-	"github.com/asdine/storm/codec/gob"
-	"github.com/asdine/storm/index"
+	"github.com/Schinti95/storm"
+	"github.com/Schinti95/storm/codec/gob"
+	"github.com/Schinti95/storm/index"
 	"github.com/boltdb/bolt"
 	"github.com/stretchr/testify/assert"
 )

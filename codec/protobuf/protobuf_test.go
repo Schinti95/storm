@@ -6,8 +6,8 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/asdine/storm"
-	"github.com/asdine/storm/codec/internal"
+	"github.com/Schinti95/storm"
+	"github.com/Schinti95/storm/codec/internal"
 	"github.com/stretchr/testify/assert"
 )
 

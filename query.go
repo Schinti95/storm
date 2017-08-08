@@ -1,8 +1,8 @@
 package storm
 
 import (
-	"github.com/asdine/storm/internal"
-	"github.com/asdine/storm/q"
+	"github.com/Schinti95/storm/internal"
+	"github.com/Schinti95/storm/q"
 	"github.com/boltdb/bolt"
 )
 

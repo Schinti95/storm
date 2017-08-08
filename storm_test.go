@@ -11,7 +11,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/asdine/storm/codec/json"
+	"github.com/Schinti95/storm/codec/json"
 	"github.com/boltdb/bolt"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

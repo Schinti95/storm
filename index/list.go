@@ -3,7 +3,7 @@ package index
 import (
 	"bytes"
 
-	"github.com/asdine/storm/internal"
+	"github.com/Schinti95/storm/internal"
 	"github.com/boltdb/bolt"
 )
 

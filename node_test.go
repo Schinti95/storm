@@ -3,8 +3,8 @@ package storm
 import (
 	"testing"
 
-	"github.com/asdine/storm/codec/gob"
-	"github.com/asdine/storm/codec/json"
+	"github.com/Schinti95/storm/codec/gob"
+	"github.com/Schinti95/storm/codec/json"
 	"github.com/boltdb/bolt"
 	"github.com/stretchr/testify/assert"
 )

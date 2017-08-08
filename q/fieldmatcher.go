@@ -3,6 +3,7 @@ package q
 import (
 	"errors"
 	"reflect"
+	"strings"
 )
 
 // ErrUnknownField is returned when an unknown field is passed.
@@ -31,9 +32,17 @@ func (r fieldMatcherDelegate) Match(i interface{}) (bool, error) {
 }
 
 func (r fieldMatcherDelegate) MatchValue(v *reflect.Value) (bool, error) {
-	field := v.FieldByName(r.Field)
-	if !field.IsValid() {
-		return false, ErrUnknownField
+	field_name := r.Field
+	field_name_arr := strings.Split(field_name, ".")
+	var field reflect.Value
+	if len(field_name_arr) > 0 {
+		field = *v
+		for i := range field_name_arr {
+			field = field.FieldByName(field_name_arr[i])
+			if !field.IsValid() {
+				return false, ErrUnknownField
+			}
+		}
 	}
 	return r.MatchField(field.Interface())
 }

@@ -3,8 +3,8 @@ package storm
 import (
 	"os"
 
-	"github.com/asdine/storm/codec"
-	"github.com/asdine/storm/index"
+	"github.com/Schinti95/storm/codec"
+	"github.com/Schinti95/storm/index"
 	"github.com/boltdb/bolt"
 )
 

@@ -2,12 +2,12 @@
 
 [![Join the chat at https://gitter.im/asdine/storm](https://badges.gitter.im/asdine/storm.svg)](https://gitter.im/asdine/storm?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Build Status](https://travis-ci.org/asdine/storm.svg)](https://travis-ci.org/asdine/storm)
-[![GoDoc](https://godoc.org/github.com/asdine/storm?status.svg)](https://godoc.org/github.com/asdine/storm)
-[![Go Report Card](https://goreportcard.com/badge/github.com/asdine/storm)](https://goreportcard.com/report/github.com/asdine/storm)
+[![GoDoc](https://godoc.org/github.com/Schinti95/storm?status.svg)](https://godoc.org/github.com/Schinti95/storm)
+[![Go Report Card](https://goreportcard.com/badge/github.com/Schinti95/storm)](https://goreportcard.com/report/github.com/Schinti95/storm)
 
 Storm is a simple and powerful toolkit for [BoltDB](https://github.com/boltdb/bolt). Basically, Storm provides indexes, a wide range of methods to store and fetch data, an advanced query system, and much more.
 
-In addition to the examples below, see also the [examples in the GoDoc](https://godoc.org/github.com/asdine/storm#pkg-examples).
+In addition to the examples below, see also the [examples in the GoDoc](https://godoc.org/github.com/Schinti95/storm#pkg-examples).
 
 ## Table of Contents
 
@@ -53,13 +53,13 @@ In addition to the examples below, see also the [examples in the GoDoc](https://
 ## Getting Started
 
 ```bash
-go get -u github.com/asdine/storm
+go get -u github.com/Schinti95/storm
 ```
 
 ## Import Storm
 
 ```go
-import "github.com/asdine/storm"
+import "github.com/Schinti95/storm"
 ```
 
 ## Open a database
@@ -285,7 +285,7 @@ Useful when the structure has changed
 ### Advanced queries
 
 For more complex queries, you can use the `Select` method.
-`Select` takes any number of [`Matcher`](https://godoc.org/github.com/asdine/storm/q#Matcher) from the [`q`](https://godoc.org/github.com/asdine/storm/q) package.
+`Select` takes any number of [`Matcher`](https://godoc.org/github.com/Schinti95/storm/q#Matcher) from the [`q`](https://godoc.org/github.com/Schinti95/storm/q) package.
 
 Here are some common Matchers:
 
@@ -331,9 +331,9 @@ q.Or(
 )
 ```
 
-You can find the complete list in the [documentation](https://godoc.org/github.com/asdine/storm/q#Matcher).
+You can find the complete list in the [documentation](https://godoc.org/github.com/Schinti95/storm/q#Matcher).
 
-`Select` takes any number of matchers and wraps them into a `q.And()` so it's not necessary to specify it. It returns a [`Query`](https://godoc.org/github.com/asdine/storm#Query) type.
+`Select` takes any number of matchers and wraps them into a `q.And()` so it's not necessary to specify it. It returns a [`Query`](https://godoc.org/github.com/Schinti95/storm#Query) type.
 
 ```go
 query := db.Select(q.Gte("Age", 7), q.Lte("Age", 77))
@@ -403,7 +403,7 @@ err = query.Each(new(User), func(record interface{}) error) {
 }
 ```
 
-See the [documentation](https://godoc.org/github.com/asdine/storm#Query) for a complete list of methods.
+See the [documentation](https://godoc.org/github.com/Schinti95/storm#Query) for a complete list of methods.
 
 ### Transactions
 
@@ -444,7 +444,7 @@ db, err := storm.Open("my.db", storm.BoltOptions(0600, &bolt.Options{Timeout: 1 
 
 #### MarshalUnmarshaler
 
-To store the data in BoltDB, Storm marshals it in JSON by default. If you wish to change this behavior you can pass a codec that implements [`codec.MarshalUnmarshaler`](https://godoc.org/github.com/asdine/storm/codec#MarshalUnmarshaler) via the [`storm.Codec`](https://godoc.org/github.com/asdine/storm#Codec) option:
+To store the data in BoltDB, Storm marshals it in JSON by default. If you wish to change this behavior you can pass a codec that implements [`codec.MarshalUnmarshaler`](https://godoc.org/github.com/Schinti95/storm/codec#MarshalUnmarshaler) via the [`storm.Codec`](https://godoc.org/github.com/Schinti95/storm#Codec) option:
 
 ```go
 db := storm.Open("my.db", storm.Codec(myCodec))
@@ -452,18 +452,18 @@ db := storm.Open("my.db", storm.Codec(myCodec))
 
 ##### Provided Codecs
 
-You can easily implement your own `MarshalUnmarshaler`, but Storm comes with built-in support for [JSON](https://godoc.org/github.com/asdine/storm/codec/json) (default), [GOB](https://godoc.org/github.com/asdine/storm/codec/gob),  [Sereal](https://godoc.org/github.com/asdine/storm/codec/sereal), [Protocol Buffers](https://godoc.org/github.com/asdine/storm/codec/protobuf) and [MessagePack](https://godoc.org/github.com/asdine/storm/codec/msgpack).
+You can easily implement your own `MarshalUnmarshaler`, but Storm comes with built-in support for [JSON](https://godoc.org/github.com/Schinti95/storm/codec/json) (default), [GOB](https://godoc.org/github.com/Schinti95/storm/codec/gob),  [Sereal](https://godoc.org/github.com/Schinti95/storm/codec/sereal), [Protocol Buffers](https://godoc.org/github.com/Schinti95/storm/codec/protobuf) and [MessagePack](https://godoc.org/github.com/Schinti95/storm/codec/msgpack).
 
 These can be used by importing the relevant package and use that codec to configure Storm. The example below shows all variants (without proper error handling):
 
 ```go
 import (
-	"github.com/asdine/storm"
-	"github.com/asdine/storm/codec/gob"
-	"github.com/asdine/storm/codec/json"
-	"github.com/asdine/storm/codec/sereal"
-	"github.com/asdine/storm/codec/protobuf"
-	"github.com/asdine/storm/codec/msgpack"
+	"github.com/Schinti95/storm"
+	"github.com/Schinti95/storm/codec/gob"
+	"github.com/Schinti95/storm/codec/json"
+	"github.com/Schinti95/storm/codec/sereal"
+	"github.com/Schinti95/storm/codec/protobuf"
+	"github.com/Schinti95/storm/codec/msgpack"
 )
 
 var gobDb, _ = storm.Open("gob.db", storm.Codec(gob.Codec))
@@ -616,7 +616,7 @@ db.Bolt.Update(func(tx *bolt.Tx) error {
 ## Migrations
 
 You can use the migration tool to migrate databases that use older version of Storm.
-See this [README](https://github.com/asdine/storm-migrator) for more informations.
+See this [README](https://github.com/Schinti95/storm-migrator) for more informations.
 
 ## License
 
@@ -624,5 +624,5 @@ MIT
 
 ## Credits
 
-- [Asdine El Hrychy](https://github.com/asdine)
-- [Bjørn Erik Pedersen](https://github.com/bep)
+- [Asdine El Hrychy](https://github.com/Schinti95)
+- [Bj??rn Erik Pedersen](https://github.com/bep)

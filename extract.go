@@ -6,7 +6,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/asdine/storm/index"
+	"github.com/Schinti95/storm/index"
 	"github.com/boltdb/bolt"
 )
 

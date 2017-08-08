@@ -1,7 +1,7 @@
 package storm
 
 import (
-	"github.com/asdine/storm/codec"
+	"github.com/Schinti95/storm/codec"
 	"github.com/boltdb/bolt"
 )
 

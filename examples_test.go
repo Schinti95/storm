@@ -9,7 +9,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/asdine/storm"
+	"github.com/Schinti95/storm"
 	"github.com/boltdb/bolt"
 )
 

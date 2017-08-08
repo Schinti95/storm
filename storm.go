@@ -6,10 +6,10 @@ import (
 	"os"
 	"time"
 
-	"github.com/asdine/storm/codec"
-	"github.com/asdine/storm/codec/json"
-	"github.com/asdine/storm/index"
-	"github.com/asdine/storm/q"
+	"github.com/Schinti95/storm/codec"
+	"github.com/Schinti95/storm/codec/json"
+	"github.com/Schinti95/storm/index"
+	"github.com/Schinti95/storm/q"
 	"github.com/boltdb/bolt"
 )
 

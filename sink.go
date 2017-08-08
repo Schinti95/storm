@@ -4,8 +4,8 @@ import (
 	"reflect"
 	"sort"
 
-	"github.com/asdine/storm/index"
-	"github.com/asdine/storm/q"
+	"github.com/Schinti95/storm/index"
+	"github.com/Schinti95/storm/q"
 	"github.com/boltdb/bolt"
 )
 
